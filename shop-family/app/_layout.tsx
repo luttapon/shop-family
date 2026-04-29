@@ -29,19 +29,20 @@ export default function RootLayout() {
   if (!fontsLoaded) {
     return (
       <View style={styles.loadingContainer}>
-        <ActivityIndicator size="large" color="#10B981" />
+        <ActivityIndicator size="large" color="#6366F1" /> 
       </View>
     );
   }
 
   return (
     <AuthProvider>
-      <StatusBar style="light" />
+      <StatusBar style="dark" /> 
+      
       <Stack
         screenOptions={{
           headerShown: false,
-          contentStyle: { backgroundColor: '#0F172A' },
-          animation: 'slide_from_right',
+          contentStyle: { backgroundColor: '#F8FAFC' }, 
+          animation: 'fade_from_bottom',
         }}
       >
         <Stack.Screen name="index" />
@@ -51,8 +52,14 @@ export default function RootLayout() {
           name="list/[id]"
           options={{
             headerShown: true,
-            headerStyle: { backgroundColor: '#0F172A' },
-            headerTintColor: '#F8FAFC',
+
+            headerStyle: { backgroundColor: '#FFFFFF' },
+            headerTintColor: '#1E293B', 
+            headerTitleStyle: {
+              fontFamily: 'Kanit_600SemiBold',
+              fontSize: 18,
+            },
+            headerShadowVisible: false, 
           }}
         />
       </Stack>
@@ -65,6 +72,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#0F172A',
+    backgroundColor: '#FFFFFF', 
   },
 });
